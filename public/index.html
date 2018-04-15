@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/css/styles.css"></link>
+    <title>Join | ChatApp</title>
+
+</head>
+
+<body class="centered-form">
+    <div class="centered-form__form">
+        <form action="/chat.html" id="join-form">
+            <div class="form-field">
+                <h3>Join a chat</h3>
+            </div>
+            <div class="form-field">
+                <label for="name">Display name</label>
+                <input type="text" name="name" autofocus/>
+            </div>
+            <div class="form-field">
+                <label for="chat">Room name</label>
+                <input type="text" name="room" />
+            </div>
+            <div class="form-field">
+                <label>Active rooms name</label>  
+                <select id="active-rooms"></select>
+            </div>
+            <div class="form-field">
+                <button>Join</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+
+    <script id="room-option-template" type="text/template">
+        <option hidden label=" "></option>
+        {{#rooms}}
+        <option value="{{.}}">{{.}}</option>
+        {{/rooms}}
+    </script>
+
+    <script src="/js/libs/mustache.js"></script>
+    <script src="/js/libs/jquery-3.3.1.min.js"></script>    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/index.js"></script>
+    
+</html>
